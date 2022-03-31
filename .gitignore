@@ -1,0 +1,14 @@
+
+Precompiled/
+
+Data/
+
+Code/__pycache__/
+
+Code/utils/__pycache__/
+
+*.so
+
+*.c
+
+Code/utils/build/
