@@ -2,10 +2,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 from brian2 import *
 
-from utils_plot import *
-from utils_spikes import *
-from utils_misc import *
-from utils_info import *
+from .utils_plot import *
+from .utils_spikes import *
+from .utils_misc import *
+from .utils_info import *
 # from Pacini_Encoding import enconding_multiple_frequencies
 from brian2 import *
 
