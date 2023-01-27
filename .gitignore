@@ -8,3 +8,4 @@ Code/utils/__pycache__/
 Code/utils/build/
 
 venv/
+src/_archive/*

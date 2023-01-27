@@ -1,6 +1,8 @@
 # sPLL
 A repository for the spiking phase locked loop
 
+*[Steve's branch]*: see files in `src/`.
+
 The network runs from PLL_characterization.py.
 The plots are done in PLL_characterization_plot.py.
 The parameters for the simulation are provided in Simulation_parameters.py
