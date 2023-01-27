@@ -135,15 +135,17 @@ def create_synapses(Fake_Neuron, Oscillator_neuron, TDE, HP0, HP1, HP2, nWTA, gW
     HP2_syn = Synapses(HP1, HP2, on_pre='Ie_post +=HP1_to_HP2_current')
     HP2_syn.connect('i == j')
 
-    Poisson_syn = Synapses(Poisson_to_nWTA, nWTA, on_pre='Ie_post += 10*pA')
 
 
     to_nWTA = Synapses(HP2, nWTA, on_pre='Ii_post += HP2_to_nWTA_current')
     to_nWTA.connect('i == j')
     to_ix_matrix, from_ix_matrix = generate_NMDA_matrix(gWTA, nWTA)
     to_gWTA = Synapses(nWTA, gWTA, on_pre='Ie_post += nWTA_to_gWTA_current')
-    Poisson_syn.connect(i = to_ix_matrix, j = from_ix_matrix)
     # to_gWTA.connect(i = from_ix_matrix, j = to_ix_matrix)
+
+    Poisson_syn = Synapses(Poisson_to_nWTA, nWTA, on_pre='Ie_post += 10*pA')
+    Poisson_syn.connect(i = to_ix_matrix, j = from_ix_matrix)
+    
     from_gWTA = Synapses(gWTA, nWTA, on_pre='Ii_post += gWTA_to_nWTA_current')
     # from_gWTA.connect(i=to_ix_matrix, j=from_ix_matrix)
     normalize_WTA = Synapses(Oscillator_neuron,nWTA,on_pre='Ie_post += 100*pA')
